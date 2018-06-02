@@ -1,0 +1,44 @@
+.house-desc {
+  margin-top: 50rpx;
+  color: #888;
+  font-size: 28rpx;
+  padding-left: 80rpx;
+  padding-right: 80rpx;
+  text-align: center;
+}
+
+.house-bd {
+  padding: 0 30rpx 40rpx;
+  background-color: #F8F8F8;
+}
+
+.swiper-img {
+  height: 100%;
+  width: 100%;
+  mode: aspectFill;
+}
+
+.swiper-bd {
+  height: 400rpx;
+  width: 100%;
+}
+
+.intro-list-item-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.intro-list-item-text { 
+  flex: 1;
+}
+
+.intro-list-item {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+  margin: 20rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 4rpx;
+
+}

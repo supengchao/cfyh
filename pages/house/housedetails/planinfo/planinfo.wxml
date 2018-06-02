@@ -1,0 +1,23 @@
+<!--pages/house/planinfo/planinfo.wxml-->
+<import src="../../../common/foot.wxml" />
+<view class='base-info-bd'>
+  <text class='base-info-content'>
+  占地面积：95479.87㎡
+
+  建筑面积：363100㎡
+
+  产  权：住宅:70年，公寓:40年 
+
+  户  数：2100户
+
+  容 积 率：4.5
+
+  绿 化 率：40%
+
+  开 发 商：山西中融银丰置业有限公司
+
+物业公司：融创物业管理有限公司
+
+投资商：融创中国控股有限公司</text>
+<template is="foot" />
+</view>

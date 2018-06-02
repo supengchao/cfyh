@@ -1,0 +1,5 @@
+<template name="foot">
+  <navigator class="page-foot" openType="switchTab" url="/pages/house/house" hover-class="none">
+    <image class="icon-foot" src="http://www.sunac.com.cn/upload/img/2016-09-12/39c0ef11-9105-468a-8e1d-5c3fe3e9064b.png"></image>
+  </navigator>
+</template>

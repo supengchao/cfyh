@@ -1,0 +1,29 @@
+<!--pages/house/house.wxml-->
+<import src="../common/foot.wxml" />
+<view class='house'>
+  <view class='house-bd'>
+    <view class='page-section page-section-spacing swiper'>
+      <swiper class="swiper-bd" indicator-dots='true' autoplay='true' interval='3000' duration='500' indicator-color='#FFFFFF' indicator-active-color='#80FFFFFF'>
+        <block wx:for="{{background}}">
+          <swiper-item>
+            <image class='swiper-img' src='{{item}}' mode='aspectFill'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="house-desc">融创长风壹號项目位于长风西街与千峰路交汇处，往北500米路西侧，小区占地约140亩，建面约36.6万方左右。规划有11栋楼，户型有70-168㎡的两居到四居。</view>
+    <view class='intro-list'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <navigator url='/pages/house/{{item.pages}}/{{item.pages}}' class='navigator'>
+          <view class="intro-list-item">
+            <view class="intro-list-item-text">{{item.name}}</view>
+            <image class="intro-list-item-img" src="resources/nav.png"></image>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <template is="foot" />
+  </view>
+
+</view>

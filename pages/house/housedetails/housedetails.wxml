@@ -1,0 +1,17 @@
+<!--pages/house/housedetails/housedetails.wxml-->
+<import src="../../common/foot.wxml" />
+<view class='house'>
+  <view class='house-bd'>
+    <view class='intro-list'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <navigator url='/pages/house/housedetails/{{item.pages}}/{{item.pages}}' class='navigator'>
+          <view class="intro-list-item">
+            <view class="intro-list-item-text">{{item.name}}</view>
+            <image class="intro-list-item-img" src="../resources/nav.png"></image>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

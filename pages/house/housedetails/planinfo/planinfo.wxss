@@ -1,0 +1,15 @@
+/* pages/house/planinfo/planinfo.wxss */
+
+.base-info-bd {
+  margin-top: 50rpx;
+  padding-bottom: 50rpx;
+  color: #fff;
+  padding-left: 80rpx;
+  padding-right: 80rpx;
+}
+
+.base-info-content {
+  color: #888;
+  font-size: 35rpx;
+  text-align: center;
+}

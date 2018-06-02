@@ -1,0 +1,14 @@
+<!--pages/house/baseinfo/baseinfo.wxml-->
+<import src="../../../common/foot.wxml" />
+<view class='base-info-bd'>
+  <text class='base-info-content'>物业类型：普通住宅,公寓\n\n</text>
+  <text class='base-info-content'>建筑类别： 板楼,高层\n\n</text>
+  <text class='base-info-content'>装修情况：装修,公共部分精装\n\n</text>
+  <text class='base-info-content'>开盘时间：2017年10月07日\n\n</text>
+  <text class='base-info-content'>入住时间：2019年09月30日\n\n</text>
+  <text class='base-info-content'>项目地址：万柏林长风西街与千峰南路交汇处西北角往北500米\n\n</text>
+  <text class='base-info-content'>售楼地址：万柏林长风西街与千峰南路交汇处西北角往北500米\n\n</text>
+
+  <map class="map" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"></map>
+  <template is="foot" />
+</view>
