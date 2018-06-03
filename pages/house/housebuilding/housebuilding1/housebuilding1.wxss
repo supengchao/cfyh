@@ -1,0 +1,13 @@
+/* pages/house/housebuilding/housebuilding1/housebuilding1.wxss */
+
+.qrcode {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}

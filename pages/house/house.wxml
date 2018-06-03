@@ -14,7 +14,7 @@
       </swiper>
     </view>
 
-    <view class="house-desc">融创长风壹號项目位于长风西街与千峰路交汇处，往北500米路西侧，小区占地约140亩，建面约36.6万方左右。规划有11栋楼，户型有70-168㎡的两居到四居。</view>
+    <view class="house-desc">"遇见长风壹号"小程序是"遇见壹号"公众号的补充版，致力于为长风壹号业主提供一个分享、交流、沟通和维权的平台。</view>
     <view class='intro-list'>
       <block wx:for-items="{{list}}" wx:key="{{item.id}}">
         <navigator url='/pages/house/{{item.pages}}/{{item.pages}}' class='navigator'>

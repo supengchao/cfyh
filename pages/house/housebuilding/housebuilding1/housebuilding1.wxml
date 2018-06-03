@@ -1,0 +1,8 @@
+<!--pages/house/housebuilding/housebuilding1/housebuilding1.wxml-->
+<import src="../../../common/foot.wxml" />
+<view class="container">
+  <view class='content'>
+    <image class='qrcode' src='{{qrcode}}'></image>
+    <template is="foot" />
+  </view>
+</view>

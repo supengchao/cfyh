@@ -24,9 +24,9 @@ Page({
         pages: "housevideo"
       },
       {
-        id: "house-complementinfo",
-        name: "待定",
-        pages: "complementinfo"
+        id: "house-building",
+        name: "楼幢信息",
+        pages: "housebuilding"
       },
       {
         id: "house-projectinfo",
