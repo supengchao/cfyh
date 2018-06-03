@@ -14,14 +14,14 @@ Page({
     ],
     list: [
       {
-        id: "house-baseinfo",
+        id: "house-details",
         name: "小区详情",
         pages: "housedetails"
       },
       {
-        id: "house-planinfo",
-        name: "待定",
-        pages: "planinfo"
+        id: "house-video",
+        name: "全景视频",
+        pages: "housevideo"
       },
       {
         id: "house-complementinfo",

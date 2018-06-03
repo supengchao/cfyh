@@ -6,7 +6,8 @@
     "pages/house/housedetails/complementinfo/complementinfo",
     "pages/house/housedetails/planinfo/planinfo",
     "pages/house/housedetails/projectinfo/projectinfo",
-    "pages/house/housedetails/housedetails"
+    "pages/house/housedetails/housedetails",
+    "pages/house/housevideo/housevideo"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",

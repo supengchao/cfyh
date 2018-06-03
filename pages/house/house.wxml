@@ -9,6 +9,8 @@
             <image class='swiper-img' src='{{item}}' mode='aspectFill'></image>
           </swiper-item>
         </block>
+
+        
       </swiper>
     </view>
 

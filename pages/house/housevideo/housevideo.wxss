@@ -1,0 +1,34 @@
+/* pages/house/housevideo/housevideo.wxss */
+
+.image {
+  margin-top: 30rpx;
+  width: 100%;
+  height: 208rpx;
+}
+
+.page-body {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.textarea-wrp {
+  width: 100%;
+  color: #1296db;
+}
+
+.video-item-tv {
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  color: #888;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.video-about {
+  color: black;
+  font-size: 40rpx;
+}
+
+.video{
+  width: 100%;
+}
