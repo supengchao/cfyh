@@ -5,9 +5,11 @@
   margin-bottom: 40rpx;
 }
 
-.content {
+/* .content {
   width: 100%;
   height: 100%;
+  padding: 50rpx;
   display: flex;
   justify-content: center;
-}
+  flex-direction: column;
+} */

@@ -9,7 +9,17 @@
     "pages/house/housedetails/housedetails",
     "pages/house/housevideo/housevideo",
     "pages/house/housebuilding/housebuilding",
-    "pages/house/housebuilding/housebuilding1/housebuilding1"
+    "pages/house/housebuilding/housebuilding1/housebuilding1",
+    "pages/house/housebuilding/housebuilding2/housebuilding2",
+    "pages/house/housebuilding/housebuilding3/housebuilding3",
+    "pages/house/housebuilding/housebuilding4/housebuilding4",
+    "pages/house/housebuilding/housebuilding5/housebuilding5",
+    "pages/house/housebuilding/housebuilding6/housebuilding6",
+    "pages/house/housebuilding/housebuilding7/housebuilding7",
+    "pages/house/housebuilding/housebuilding8/housebuilding8",
+    "pages/house/housebuilding/housebuilding9/housebuilding9",
+    "pages/house/housebuilding/housebuildingA/housebuildingA",
+    "pages/house/housebuilding/housebuildingB/housebuildingB"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",

@@ -15,61 +15,61 @@ Page({
       name: "2号楼",
       page: "",
       icon: "../resources/number/number2.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding2/housebuilding2",
       qrcode: ""
     }, {
       name: "3号楼",
       page: "",
       icon: "../resources/number/number3.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding3/housebuilding3",
       qrcode: ""
     }, {
       name: "4号楼",
       page: "",
       icon: "../resources/number/number4.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding4/housebuilding4",
       qrcode: ""
     }, {
       name: "5号楼",
       page: "",
       icon: "../resources/number/number5.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding5/housebuilding5",
       qrcode: ""
     }, {
       name: "6号楼",
       page: "",
       icon: "../resources/number/number6.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding6/housebuilding6",
       qrcode: ""
     }, {
       name: "7号楼",
       page: "",
       icon: "../resources/number/number7.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding7/housebuilding7",
       qrcode: ""
     }, {
       name: "8号楼",
       page: "",
       icon: "../resources/number/number8.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding8/housebuilding8",
       qrcode: ""
     }, {
       name: "9号楼",
       page: "",
       icon: "../resources/number/number9.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuilding9/housebuilding9",
       qrcode: ""
     }, {
       name: "公寓A",
       page: "",
       icon: "../resources/number/numberA.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuildingA/housebuildingA",
       qrcode: ""
     }, {
       name: "公寓B",
       page: "",
       icon: "../resources/number/numberB.png",
-      url: "",
+      url: "/pages/house/housebuilding/housebuildingB/housebuildingB",
       qrcode: ""
     }
     ]

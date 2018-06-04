@@ -1,0 +1,6 @@
+<template name="buildingview">
+
+  <view class='buildingviewtitle'>{{title}}</view>
+  <image class='buildingviewimg' src='{{image}}' mode='widthFix'></image>
+
+</template>

@@ -1,4 +1,4 @@
-<!--pages/house/housebuilding/housebuilding1/housebuilding1.wxml-->
+<!--pages/house/housebuilding/housebuilding3/housebuilding3.wxml-->
 <import src="../../../common/foot.wxml" />
 <import src="../template/buildingview.wxml" />
 
