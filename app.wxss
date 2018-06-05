@@ -43,6 +43,7 @@
 }
 
 .buildingviewtitle {
+  margin-top: 80rpx;
   font-size: 28rpx;
   color: #888;
   text-align: center;

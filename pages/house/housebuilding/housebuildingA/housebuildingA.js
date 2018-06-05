@@ -6,8 +6,8 @@ Page({
    */
   data: {
     item: {
-      title: "2018.06.02",
-      image: "http://7xt41p.com1.z0.glb.clouddn.com/no1.jpg"
+      title: "暂时还有公寓A的照片更新",
+      image: ""
     }
   },
 

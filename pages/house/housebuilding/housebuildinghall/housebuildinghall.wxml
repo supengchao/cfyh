@@ -1,4 +1,5 @@
-<!--pages/house/housebuilding/housebuilding9/housebuilding9.wxml-->
+<!--pages/house/housebuilding/housebuildinghall/housebuildinghall.wxml-->
+ 
 <import src="../../../common/foot.wxml" />
 <import src="../template/buildingview.wxml" />
 

@@ -19,7 +19,8 @@
     "pages/house/housebuilding/housebuilding8/housebuilding8",
     "pages/house/housebuilding/housebuilding9/housebuilding9",
     "pages/house/housebuilding/housebuildingA/housebuildingA",
-    "pages/house/housebuilding/housebuildingB/housebuildingB"
+    "pages/house/housebuilding/housebuildingB/housebuildingB",
+    "pages/house/housebuilding/housebuildinghall/housebuildinghall"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",
@@ -28,21 +29,21 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "color": "#8a8a8a",
+    "selectedColor": "#66CCFF",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/house/house",
         "text": "小区动态",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component_HL.png"
+        "iconPath": "image/icon_house_normal.png",
+        "selectedIconPath": "image/icon_house_select.png"
       },
       {
         "pagePath": "pages/owner/owner",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
+        "iconPath": "image/icon_peopel_normal.png",
+        "selectedIconPath": "image/icon_people_select.png",
         "text": "业主之家"
       }
     ]

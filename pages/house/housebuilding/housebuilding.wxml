@@ -7,7 +7,7 @@
         <view class="weui-grid__icon">
           <image src=" {{item.icon}}" mode="scaleToFill" />
         </view>
-        <text class="weui-grid__label">号楼</text>
+        <text class="weui-grid__label">{{item.name}}</text>
       </navigator>
     </view>
   </view>

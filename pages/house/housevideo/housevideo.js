@@ -31,6 +31,12 @@ Page({
       }, {
         name: "138户型讲解",
         url: "http://1253473436.vod2.myqcloud.com/e263b6cdvodtransgzp1253473436/af3b85c24564972818493627798/v.f20.mp4"
+      }, {
+        name: "内部装修视频1",
+        url: "http://7xt41p.com1.z0.glb.clouddn.com/video1.mp4"
+      }, {
+        name: "内部装修视频2",
+        url: "http://7xt41p.com1.z0.glb.clouddn.com/video2.mp4"
       }
     ]
   },

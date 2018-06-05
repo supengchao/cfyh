@@ -71,6 +71,12 @@ Page({
       icon: "../resources/number/numberB.png",
       url: "/pages/house/housebuilding/housebuildingB/housebuildingB",
       qrcode: ""
+    }, {
+      name: "大堂",
+      page: "",
+      icon: "../resources/number/hall.png",
+      url: "/pages/house/housebuilding/housebuildinghall/housebuildinghall",
+      qrcode: ""
     }
     ]
   },

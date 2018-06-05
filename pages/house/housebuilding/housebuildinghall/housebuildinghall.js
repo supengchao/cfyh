@@ -1,14 +1,16 @@
-// pages/house/housebuilding/housebuildingB/housebuildingB.js
+// pages/house/housebuilding/housebuildinghall/housebuildinghall.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    item: {
-      title: "暂时还有公寓B的照片更新",
-      image: ""
-    }
+    imageList: [
+      {
+        title: "2018.06.05 入户大堂首次曝光",
+        image: "http://7xt41p.com1.z0.glb.clouddn.com/hall1.jpg"
+      }
+    ]
   },
 
   /**
