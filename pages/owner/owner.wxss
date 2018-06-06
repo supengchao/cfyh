@@ -3,9 +3,10 @@
 /**index.wxss**/
 
 .userinfo {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .userinfo-avatar {
@@ -19,21 +20,41 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.userinfo-address {
+  color: #aaa;
+  margin-top: 10rpx;
 }
 
 .btn {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  color: black;
+  color: #aaa;
   font-size: 30rpx;
   display: flex;
   align-items: center;
+  background-color: rgba(255, 255, 255, 255);
 }
 
 .btn::after {
   border: 0;
 }
+
+.userinfo-container {
+  display: flex;
+  margin-top: 50rpx;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userinfo-name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemview {
+  display: flex;
+  flex-direction: column;
+}
+
+ 
+
+

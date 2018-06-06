@@ -6,15 +6,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    headview:'/image/headview.png',
+    itemList: [{
+      title: "title1",
+      url: ""
+    }, {
+      title: "title2",
+      url: ""
+    }, {
+      title: "title3",
+      url: ""
+    }],
+    headview: '/image/headview.png',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  bindViewTap:function(){
-      wx.navigateTo({
-        url: '',
-      })
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '',
+    })
   },
   /**
    * 生命周期函数--监听页面加载

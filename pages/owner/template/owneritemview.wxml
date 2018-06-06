@@ -1,0 +1,9 @@
+<template name='owneritemview'>
+  <view class='owneritemviewcontainer1'>
+    <view class='owneritemviewcontainer'>
+      <text class='intro-list-item-text'>{{title}}</text>
+      <image class="intro-list-item-img" src="/image/nav.png"></image>
+    </view>
+    <view class='item-divide-line'></view>
+  </view>
+</template>

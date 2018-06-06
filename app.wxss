@@ -48,7 +48,8 @@
   color: #888;
   text-align: center;
 }
-.buildingviewimg{
+
+.buildingviewimg {
   width: 100%;
   margin-top: 30rpx;
 }
@@ -61,3 +62,38 @@
   justify-content: center;
   flex-direction: column;
 }
+.intro-list-item-img {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.intro-list-item-text { 
+  flex: 1;
+}
+.owneritemviewcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 32rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.owneritemviewcontainer1 {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 32rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.item-divide-line{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  height: 2rpx;
+  background-color: #d8d8d8;
+}  
