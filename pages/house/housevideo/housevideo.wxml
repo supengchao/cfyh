@@ -2,6 +2,15 @@
 <import src="../../common/foot.wxml" />
 <view class='container'>
   <view class="page-body">
+
+    <text class="weui-cells">相关视频</text>
+    <view wx:for="{{videoList}}">
+
+      <text class='video-item-tv'>{{item.name}}</text>
+      <video class="video" src='{{item.url}}'></video>
+
+    </view>
+    <view class="page-head-line"></view>
     <view class="house-desc">微信小程序暂时没有开放外链跳转功能，所以这里的VR视频需要拷贝地址到浏览器观看</view>
     <view class="page-section page-section-gap" wx:for="{{imgList}}">
       <view class="page-section-ctn">
@@ -15,13 +24,6 @@
       </view>
     </view>
     <view class="page-head-line"></view>
-    <text class="weui-cells">相关视频</text>
-    <view wx:for="{{videoList}}">
-
-      <text class='video-item-tv'>{{item.name}}</text>
-      <video class="video" src='{{item.url}}'></video>
-
-    </view>
   </view>
   <template is="foot" />
 </view>

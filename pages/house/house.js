@@ -14,13 +14,13 @@ Page({
     ],
     list: [
       {
-        id: "house-details",
-        name: "小区详情",
-        pages: "housedetails"
+        id: "house-news",
+        name: "遇见新闻",
+        pages: "housenews"
       },
       {
         id: "house-video",
-        name: "全景视频",
+        name: "壹号视频",
         pages: "housevideo"
       },
       {
@@ -29,14 +29,9 @@ Page({
         pages: "housebuilding"
       },
       {
-        id: "house-projectinfo",
-        name: "待定",
-        pages: "projectinfo"
-      },
-      {
-        id: "house-info",
-        name: "待定",
-        pages: ""
+        id: "house-details",
+        name: "小区详情",
+        pages: "housedetails"
       }
     ]
     

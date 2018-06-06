@@ -24,8 +24,8 @@
 }
 
 .intro-list-item-img {
-  width: 60rpx;
-  height: 60rpx;
+  width: 32rpx;
+  height: 32rpx;
 }
 
 .intro-list-item-text { 
