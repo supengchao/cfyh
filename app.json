@@ -20,7 +20,8 @@
     "pages/house/housebuilding/housebuilding9/housebuilding9",
     "pages/house/housebuilding/housebuildingA/housebuildingA",
     "pages/house/housebuilding/housebuildingB/housebuildingB",
-    "pages/house/housebuilding/housebuildinghall/housebuildinghall"
+    "pages/house/housebuilding/housebuildinghall/housebuildinghall",
+    "pages/circle/circle"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",
@@ -39,6 +40,12 @@
         "text": "小区动态",
         "iconPath": "image/icon_house_normal.png",
         "selectedIconPath": "image/icon_house_select.png"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "text": "壹号圈",
+        "iconPath": "image/icon_friend_circle_normal.png",
+        "selectedIconPath": "image/icon_friend_circle_select.png"
       },
       {
         "pagePath": "pages/owner/owner",

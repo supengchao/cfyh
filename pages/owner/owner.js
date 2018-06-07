@@ -7,13 +7,16 @@ Page({
    */
   data: {
     itemList: [{
-      title: "title1",
+      title: "我的发布",
       url: ""
     }, {
-      title: "title2",
+      title: "邀请好友",
       url: ""
     }, {
-      title: "title3",
+      title: "帮助反馈",
+      url: ""
+    }, {
+      title: "关于我们",
       url: ""
     }],
     headview: '/image/headview.png',

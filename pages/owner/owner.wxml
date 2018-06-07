@@ -1,6 +1,7 @@
 <!--pages/owner/owner.wxml-->
 <import src='template/owneritemview.wxml' />
-<view class="container">
+<import src="/pages/common/foot.wxml" />
+<view class="owner">
   <view class='userinfo'>
     <block wx:if='{{!hasUserInfo&&canIUse}}'>
       <view class='userinfo-container'>
@@ -19,12 +20,22 @@
         </view>
       </view>
     </block>
-    <view class="page-head-line"></view>
+    <!-- <view class="page-head-line"></view> -->
 
-    <block wx:for='{{itemList}}'>
-      <view class='itemview'>
-        <template is='owneritemview' data='{{...item}}' />
+    
+    <view class='owner-bd'>
+      <view class='intro-list'>
+        <block wx:for-items="{{itemList}}" wx:key="{{item.title}}">
+          <navigator url='/pages/house/housedetails/{{item.pages}}/{{item.pages}}' class='navigator'>
+            <view class="intro-list-item">
+              <view class="intro-list-item-text">{{item.title}}</view>
+              <image class="intro-list-item-img" src="../../image/nav.png"></image>
+            </view>
+          </navigator>
+        </block>
       </view>
-    </block>
+    </view>
+    <template is="foot" />
   </view>
+ 
 </view>
