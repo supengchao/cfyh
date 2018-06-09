@@ -1,2 +1,30 @@
 <!--pages/circle/circle.wxml-->
-<text>pages/circle/circle.wxml</text>
+<scroll-view class='box' scroll-y='true' style='height:1200rpx' bindscroll='scrollHandle' lower-threshold='50' bindscrolltolower='scrollLoading' scroll-top='{{scrolltop}}'>
+
+  <!--右上角发布小图标-->
+  <view class="top-right" bindtap="bindAdd" bindtap="scrollHandle" animation="{{animationData1}}">
+    <image class="baseimg" src="../../image/add.png" mode="scaleToFill" catchtap="bindAdd"></image>
+  </view>
+  <!--右上角地理位置小图标-->
+  <view class="top-left" bindtap="scrollHandle" animation="{{animationData2}}">
+    <image class="baseimg" src="/image/ditu.png" mode="scaleToFill" catchtap="locationWb"></image>
+  </view>
+  
+  <!--背景小图标-->
+  <view class="bg">
+    <image class="baseimg" src="../../image/bg.jpg" mode="scaleToFill"></image>
+  </view>
+  <!--背景图底部大头像-->
+  <view class="headimg">
+    <image class="baseimg" src="{{userInfo['avatarUrl']}}" mode="scaleToFill"></image>
+  </view>
+  <!--背景图底部昵称-->
+  <view class="nickname">
+    <text>{{userInfo['nickName']}}</text>
+  </view>
+  <!--占位行-->
+  <view class="lie"></view>
+
+
+
+</scroll-view>

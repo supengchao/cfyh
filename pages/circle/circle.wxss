@@ -1,1 +1,84 @@
 /* pages/circle/circle.wxss */
+
+ .top-left
+ {
+  width:70rpx;
+   height:70rpx;
+   position:absolute;
+   left:50rpx;
+   border-radius: 80rpx;
+   overflow:hidden;
+   opacity: 0;
+   z-index:9999;
+ }
+
+ .top-right
+ {
+   width:70rpx;
+   height:70rpx;
+   position:absolute;
+   right:50rpx;
+   border-radius: 80rpx;
+   overflow:hidden;
+   opacity: 0;
+   z-index:9999;
+ }
+
+ .baseimg
+ {
+   width:100%;
+   height:100%;
+ }
+
+ .oneImg
+ {
+   width:auto;
+   height:auto;
+   /*margin-left:100rpx;*/
+   overflow:hidden;
+ }
+
+ .images-image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+
+ .bg
+ {
+   height: 400rpx;
+   /*background: red;*/
+   overflow:hidden;
+ }
+
+ .headimg
+ {
+   width: 150rpx;
+   height: 150rpx;
+   position:absolute;
+   border: 2px solid #fff;
+   margin-top: -100rpx;
+   margin-left: 570rpx;
+   overflow:hidden;
+ }
+
+ .nickname
+ {
+   width:400rpx;
+   text-align: right;
+   position:absolute;
+   color:#fff;
+   margin-top: -70rpx;
+   margin-left: 150rpx; 
+   font-size:14pt;
+   font-weight:600;
+   /*border:1px solid red;*/
+   
+ }
+
+ .lie
+ {
+   /*border: 1px solid #ccc;*/
+   margin-top: 100rpx;
+   flex-direction: column;
+ }

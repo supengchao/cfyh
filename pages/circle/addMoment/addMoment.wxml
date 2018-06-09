@@ -1,0 +1,39 @@
+<!--pages/circle/addMoment/addMoment.wxml-->
+<view class='box'>
+  <!-- 表单 -->
+  <form bindsubmit='formSubmit' bindreset='formReset'>
+
+    <!-- 输入框 -->
+    <view class='inputContainer'>
+      <textarea class='inputContent' placeholder='请输入您的内容' placeholder-style='font-size:13pt;' name='content'></textarea>
+    </view>
+
+    <!-- 图片选择 -->
+    <view class='images-wrapper'>
+      <block wx:for='{{imageList}}' wx:for-item='image'>
+        <image src='{{image}}' class='images-image' data-src='{{image}}' bindtap='previewImage'></image>
+      </block>
+      <block wx:if='{{imgLength<9}}'>
+        <view class='images-image image-plus' bindtap='chooseImage'>
+          <view class='image-plus-horizontal'></view>
+          <view class='image-plus-vertical'></view>
+        </view>
+
+      </block>
+    </view>
+
+    <!-- 地址输入框 -->
+    <view class='address'>
+      <view class='divideLine'></view>
+      <view bindtap='bindAddress'>
+        <image class='iconAddress' src='../../../image/address.png' mode='aspectFit'></image>
+        <text class='location'>{{addRessName?addRessName:'所在位置'}}
+            <input name="address" value='{{addRessName}}' type='text'/>
+        </text>
+        <image class='iconNav' src='../../../image/nav.png' mode='aspectFit'></image>
+      </view>
+    </view>
+
+    <button class='buttona' form-type='submit'>提交</button>
+  </form>
+</view>

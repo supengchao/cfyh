@@ -26,7 +26,7 @@
     <view class='owner-bd'>
       <view class='intro-list'>
         <block wx:for-items="{{itemList}}" wx:key="{{item.title}}">
-          <navigator url='/pages/house/housedetails/{{item.pages}}/{{item.pages}}' class='navigator'>
+          <navigator url='{{item.url}}' class='navigator'>
             <view class="intro-list-item">
               <view class="intro-list-item-text">{{item.title}}</view>
               <image class="intro-list-item-img" src="../../image/nav.png"></image>

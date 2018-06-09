@@ -21,7 +21,8 @@
     "pages/house/housebuilding/housebuildingA/housebuildingA",
     "pages/house/housebuilding/housebuildingB/housebuildingB",
     "pages/house/housebuilding/housebuildinghall/housebuildinghall",
-    "pages/circle/circle"
+    "pages/circle/circle",
+    "pages/circle/addMoment/addMoment"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",
