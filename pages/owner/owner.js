@@ -9,11 +9,11 @@ Page({
    */
   data: {
     itemList: [{
-      title: "我的发布",
+      title: "发表说说",
       url: "../circle/addMoment/addMoment"
     }, {
-      title: "邀请好友",
-      url: ""
+      title: "我的发布",
+      url: "myMoments/myMoments"
     }, {
       title: "帮助反馈",
       url: ""

@@ -73,12 +73,28 @@ class Moment extends AV.Object {
     this.set('imgStr', value);
   }
 
-  get user(){
+  get user() {
     return this.get('user');
   }
 
-  set user(value){
-    this.set('user',value);
+  set user(value) {
+    this.set('user', value);
+  }
+
+  get imageList() {
+    return this.get('imageList');
+  }
+
+  set imageList(value) {
+    this.set('imageList', value);
+  }
+
+  get imgLength() {
+    return this.get('imgLength');
+  }
+
+  set imgLength(value) {
+    this.set('imgLength', value);
   }
 }
 AV.Object.register(Moment, 'Moment');

@@ -1,6 +1,7 @@
 // pages/circle/addMoment/addMoment.js
 const AV = require('../../../utils/av-weapp-min.js');
 const Moment = require('../../../model/moment.js');
+const util = require('../../../utils/util.js');
 var app = getApp();
 Page({
 
@@ -15,7 +16,8 @@ Page({
     content: '',
     imgStr: '',
     httpImg: [],
-    imgLength: 0
+    imgLength: 0,
+    imageList: []
   },
 
   /**
@@ -52,13 +54,15 @@ Page({
       if (that.data.addressData == null) {
         that.data.addressData = that.data.userStatus;
       }
-      
+      wx.showLoading({
+        title:'正在发送，请稍后'
+      });
       var acl = new AV.ACL();
       acl.setPublicReadAccess(false);
       acl.setPublicWriteAccess(false);
       acl.setReadAccess(AV.User.current(), true);
       acl.setWriteAccess(AV.User.current(), true);
-  
+
       new Moment({
         nickName: that.data.userInfo.nickName,
         avatarUrl: that.data.userInfo.avatarUrl,
@@ -69,9 +73,19 @@ Page({
         content: e.detail.value.content,
         userId: that.data.userStatus.userId,
         imgStr: that.data.imgStr,
+        imgLength: that.data.imgLength,
+        imageList: that.data.imageList,
         user: AV.User.current()
       }).setACL(acl).save().then((todo) => {
-
+          wx.hideLoading();
+          wx.showToast({
+            title: '发表成功',
+            icon: 'success',
+            duration: 2000
+          });
+          wx.navigateBack({
+            delta: 1
+          })
       }).catch(error => console.error(error.message));
 
 
@@ -101,7 +115,7 @@ Page({
     that.setData({
       httpImg: []
     });
- 
+
     wx.chooseImage({
       sourceType: ['album', 'camera'],
       sizeType: ['original', 'compressed'],
@@ -120,9 +134,9 @@ Page({
               uri: localFile,
             },
           }).save().then(file => {
-              console.log("上传图片的地址："+file.url())
-              that.data.httpImg.push(file.url())
-            }).catch(console.error);
+            console.log("上传图片的地址：" + file.url())
+            that.data.httpImg.push(file.url())
+          }).catch(console.error);
         }
 
         var timeS = 0;

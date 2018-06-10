@@ -1,29 +1,58 @@
 <!--pages/circle/circle.wxml-->
-<scroll-view class='box' scroll-y='true' style='height:1200rpx' bindscroll='scrollHandle' lower-threshold='50' bindscrolltolower='scrollLoading' scroll-top='{{scrolltop}}'>
+<scroll-view class='box' scroll-y='true' style='height:100%' bindscroll='scrollHandle' lower-threshold='50' bindscrolltolower='scrollLoading' scroll-top='{{scrolltop}}'>
 
   <!--右上角发布小图标-->
-  <view class="top-right" bindtap="bindAdd" bindtap="scrollHandle" animation="{{animationData1}}">
+   <!-- <view class="top-right" bindtap="bindAdd" bindtap="scrollHandle" animation="{{animationData1}}">
     <image class="baseimg" src="../../image/add.png" mode="scaleToFill" catchtap="bindAdd"></image>
-  </view>
+  </view>  -->
   <!--右上角地理位置小图标-->
-  <view class="top-left" bindtap="scrollHandle" animation="{{animationData2}}">
+  <!-- <view class="top-left" bindtap="scrollHandle" animation="{{animationData2}}">
     <image class="baseimg" src="/image/ditu.png" mode="scaleToFill" catchtap="locationWb"></image>
-  </view>
-  
+  </view> -->
+
   <!--背景小图标-->
-  <view class="bg">
+    <view class="bg">
     <image class="baseimg" src="../../image/bg.jpg" mode="scaleToFill"></image>
-  </view>
+  </view>  
   <!--背景图底部大头像-->
-  <view class="headimg">
+   <view class="headimg">
     <image class="baseimg" src="{{userInfo['avatarUrl']}}" mode="scaleToFill"></image>
-  </view>
+  </view> 
   <!--背景图底部昵称-->
-  <view class="nickname">
+   <view class="nickname">
     <text>{{userInfo['nickName']}}</text>
-  </view>
+  </view> 
   <!--占位行-->
-  <view class="lie"></view>
+   <view class="lie"></view>
+
+  <view class="moments_content">
+    <view class="wa-row borderBot marginBot" wx:for="{{resultData}}" wx:for-index="k">
+      <view class="wa-col-15">
+        <image class="otherAva" src="{{resultData[k].avatarUrl}}"></image>
+      </view>
+      <view class="wa-col-80" style="padding:100">
+        <view class="otherName">{{resultData[k].nickName}}</view>
+        <view class='contentMsg' wx:if="{{resultData[k].content}}" >{{resultData[k].content}}</view>
+        <view class="weui-grids" style="overflow:hidden;width:100%;margin:10px 0" wx:if="{{resultData[k].imageList}}">
+          <view class="weui-grid" wx:for="{{resultData[k].imageList}}" wx:for-item="image" style="background:url('{{image}}') no-repeat;background-size:cover;float:left;width:33%;height:190rpx" data-src='{{image}}' data-count='{{resultData[k].imageList}}' bindtap='previewImage'></view>
+        </view>
+        <view wx:if="{{resultData[k].address}}" class="addressName">
+          {{resultData[k].address}}
+        </view>
+        <view class="nickTime">
+          <view class="padding_half">{{timesData[k]}}</view>
+          <view class="ion-ios-compose-outline nickIcon"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
 
 
 
