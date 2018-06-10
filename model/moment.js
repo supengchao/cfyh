@@ -65,14 +65,6 @@ class Moment extends AV.Object {
     this.set('userId', value);
   }
 
-  get imgStr() {
-    return this.get('imgStr');
-  }
-
-  set imgStr(value) {
-    this.set('imgStr', value);
-  }
-
   get user() {
     return this.get('user');
   }

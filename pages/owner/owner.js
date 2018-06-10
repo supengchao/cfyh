@@ -15,11 +15,8 @@ Page({
       title: "我的发布",
       url: "myMoments/myMoments"
     }, {
-      title: "帮助反馈",
-      url: ""
-    }, {
       title: "关于我们",
-      url: ""
+      url: "about/about"
     }],
     headview: '/image/headview.png',
     userInfo: {},

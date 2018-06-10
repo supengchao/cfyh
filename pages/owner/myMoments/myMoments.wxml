@@ -1,2 +1,6 @@
 <!--pages/owner/myMoments/myMoments.wxml-->
-<text>pages/owner/myMoments/myMoments.wxml</text>
+<import src="../../common/foot.wxml" />
+<view class="house-desc">"我的发布"模块还未开放，尽情期待。 业主可以通过"我的发布"模块查看曾经发过的说说。
+</view>
+
+<template is="foot" />

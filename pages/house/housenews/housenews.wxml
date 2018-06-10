@@ -1,0 +1,6 @@
+<!--pages/house/housenews/housenews.wxml-->
+<import src="../../common/foot.wxml" />
+<view class="house-desc">"遇见新闻"模块还未开放，尽情期待。 "遇见新闻"模块是为了帮助业主在小程序首页能第一时间看到小区的动态而设立的， 内容的展现格式还在开发中，欢迎大家踊跃提出自己的宝贵意见。可以发送到壹号圈，让大家看到哦。
+</view>
+
+<template is="foot" />

@@ -23,7 +23,9 @@
     "pages/house/housebuilding/housebuildinghall/housebuildinghall",
     "pages/circle/circle",
     "pages/circle/addMoment/addMoment",
-    "pages/owner/myMoments/myMoments"
+    "pages/owner/myMoments/myMoments",
+    "pages/house/housenews/housenews",
+    "pages/owner/about/about"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",

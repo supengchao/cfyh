@@ -2,7 +2,7 @@
 const AV = require('../../../utils/av-weapp-min.js');
 const Moment = require('../../../model/moment.js');
 const util = require('../../../utils/util.js');
-var app = getApp();
+
 Page({
 
   /**
@@ -14,7 +14,6 @@ Page({
     userStatus: {},
     addRessName: '',
     content: '',
-    imgStr: '',
     httpImg: [],
     imgLength: 0,
     imageList: []
@@ -39,57 +38,60 @@ Page({
   formSubmit: function (e) {
     var that = this;
     console.log(e.detail.value.content);
-    if (e.detail.value.content == '' && that.data.imgStr == '') {
+    if (e.detail.value.content == '' && that.data.imgLength == 0) {
       wx.showModal({
-        content: '请填写内容后点击提交保存！',
+        content: '您还没有写任何东西，请填写内容后再点击提交哦',
         showCancel: false,
         success: function (res) {
           if (res.confirm) {
             console.log('click confirm btn');
           }
         }
-
       });
     } else {
       if (that.data.addressData == null) {
         that.data.addressData = that.data.userStatus;
       }
       wx.showLoading({
-        title:'正在发送，请稍后'
+        title: '正在发送...'
       });
-      var acl = new AV.ACL();
-      acl.setPublicReadAccess(false);
-      acl.setPublicWriteAccess(false);
-      acl.setReadAccess(AV.User.current(), true);
-      acl.setWriteAccess(AV.User.current(), true);
-
-      new Moment({
-        nickName: that.data.userInfo.nickName,
-        avatarUrl: that.data.userInfo.avatarUrl,
-        name: that.data.addressData.name,
-        address: that.data.addressData.address,
-        latitude: that.data.addressData.latitude,
-        longitude: that.data.addressData.longitude,
-        content: e.detail.value.content,
-        userId: that.data.userStatus.userId,
-        imgStr: that.data.imgStr,
-        imgLength: that.data.imgLength,
-        imageList: that.data.imageList,
-        user: AV.User.current()
-      }).setACL(acl).save().then((todo) => {
-          wx.hideLoading();
-          wx.showToast({
-            title: '发表成功',
-            icon: 'success',
-            duration: 2000
-          });
-          wx.navigateBack({
-            delta: 1
-          })
-      }).catch(error => console.error(error.message));
-
-
+      that.uploadImgList(e);
     }
+  },
+  requestCommitApi: function () {
+
+    var acl = new AV.ACL();
+    acl.setPublicReadAccess(false);
+    acl.setPublicWriteAccess(false);
+    acl.setReadAccess(AV.User.current(), true);
+    acl.setWriteAccess(AV.User.current(), true);
+
+    new Moment({
+      nickName: that.data.userInfo.nickName,
+      avatarUrl: that.data.userInfo.avatarUrl,
+      name: that.data.addressData.name,
+      address: that.data.addressData.address,
+      latitude: that.data.addressData.latitude,
+      longitude: that.data.addressData.longitude,
+      content: e.detail.value.content,
+      userId: that.data.userStatus.userId,
+      imgLength: that.data.imgLength,
+      imageList: that.data.imageList,
+      user: AV.User.current()
+    }).setACL(acl).save().then((todo) => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '发表成功',
+        icon: 'success',
+        duration: 5000
+      });
+      wx.navigateBack({
+        delta: 1
+      })
+      that.setData({
+        httpImg: []
+      });
+    }).catch(error => console.error(error.message));
   },
 
   //reset
@@ -112,62 +114,119 @@ Page({
   // 选择上传照片
   chooseImage: function () {
     var that = this;
-    that.setData({
-      httpImg: []
-    });
+    // that.setData({
+    //   httpImg: []
+    // });
 
     wx.chooseImage({
+      count: 9 - that.data.imgLength,
       sourceType: ['album', 'camera'],
       sizeType: ['original', 'compressed'],
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
+        for (var i = 0; i < tempFilePaths.length; i++) {
+          that.data.imageList.push(tempFilePaths[i])
+        }
+
         that.setData({
-          imgLength: tempFilePaths.length
+          imgLength: that.data.imageList.length,
+          imageList: that.data.imageList
         })
         // that.data.imgLength = tempFilePaths.length
         // 将单次选择的图片轮训上传后端，得到图片url
-        for (var a = 0; a < tempFilePaths.length; a++) {
-          var name = "file" + a + ".jpg";
-          var localFile = tempFilePaths[a];
-          new AV.File(name, {
-            blob: {
-              uri: localFile,
-            },
-          }).save().then(file => {
-            console.log("上传图片的地址：" + file.url())
-            that.data.httpImg.push(file.url())
-          }).catch(console.error);
-        }
 
-        var timeS = 0;
-        var timeOut = setInterval(function () {
-          console.info(that.data.imgLength + "--" + that.data.httpImg.length)
-          if (that.data.imgLength == that.data.httpImg.length) {
-            that.setData({
-              imageList: that.data.httpImg,
-              imgStr: that.data.httpImg.join(",")
-            })
-
-            console.log(that.data.imageList.join(","))
-            clearInterval(timeOut)
-          }
-          else {
-            if (timeS > 50) {
-              console.log('图片上传失败,请重试')
-              clearInterval(timeOut)
-            }
-            else {
-              that.bindLoding();
-              console.log('上传中')
-            }
-          }
-
-          timeS++;
-
-        }, 1000)
 
       },
     })
+  },
+  uploadImgList: function (e) {//轮询上传服务器图片
+    var that = this;
+
+    that.data.imageList.map(tempFilePath => () => new AV.File('filename', {
+      blob: {
+        uri: tempFilePath,
+      },
+    }).save()).reduce(
+      (m, p) => m.then(v => AV.Promise.all([...v, p()])),
+      AV.Promise.resolve([])
+      ).then(files => files.map(file =>
+        that.data.httpImg.push(file.url())
+      )).catch(console.error);
+
+
+    // for (var a = 0; a < that.data.imgLength; a++) {
+    //   var name = "file";
+    //   var list = that.data.imageList;
+    //   var localFile = list[a];
+    //   new AV.File(name, {
+    //     blob: {
+    //       uri: localFile,
+    //     },
+    //   }).save().then(file => {
+    //     console.log("上传图片的地址：" + file.url())
+    //     that.data.httpImg.push(file.url())
+    //   }).catch(console.error);
+    // }
+
+    var timeS = 0;
+    var timeOut = setInterval(function () {
+      console.info(that.data.imgLength + "--" + that.data.httpImg.length)
+      if (that.data.imgLength == that.data.httpImg.length) {
+        that.setData({
+          imgLength: that.data.httpImg.length,
+          imageList: that.data.httpImg
+        })
+        // this.requestCommitApi();
+        clearInterval(timeOut);
+
+
+        var acl = new AV.ACL();
+        acl.setPublicReadAccess(false);
+        acl.setPublicWriteAccess(false);
+        acl.setReadAccess(AV.User.current(), true);
+        acl.setWriteAccess(AV.User.current(), true);
+
+        new Moment({
+          nickName: that.data.userInfo.nickName,
+          avatarUrl: that.data.userInfo.avatarUrl,
+          name: that.data.addressData.name,
+          address: that.data.addressData.address,
+          latitude: that.data.addressData.latitude,
+          longitude: that.data.addressData.longitude,
+          content: e.detail.value.content,
+          userId: that.data.userStatus.userId,
+          imgLength: that.data.imgLength,
+          imageList: that.data.imageList,
+          user: AV.User.current()
+        }).setACL(acl).save().then((todo) => {
+          wx.hideLoading();
+          wx.showToast({
+            title: '发表成功',
+            icon: 'success',
+            duration: 2000
+          });
+          wx.navigateBack({
+            delta: 1
+          })
+          that.setData({
+            httpImg: [],
+            imgLength: 0,
+            imageList: []
+          });
+        }).catch(error => console.error(error.message));
+
+
+      }
+      else {
+        if (timeS > 50) {
+          console.log('图片上传失败,请重试')
+          clearInterval(timeOut)
+        }
+      }
+
+      timeS++;
+
+    }, 1000)
   },
   // 预览图片
   previewImage: function (e) // 显示图片大图

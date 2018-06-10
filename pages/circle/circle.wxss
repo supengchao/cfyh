@@ -41,16 +41,17 @@
 .addressName{
   color: #576B95;
   padding: 10rpx;
+  font-size: 26rpx;
 }
 .padding_half{
   color: #868686;
   padding: 10rpx;
+  font-size: 26rpx;
 }
 .contentMsg{
   width: 100%;
   color: #030303;
-  display: block;
-  white-space: pre-line;
+ font-size: 32rpx;
 }
 
 
