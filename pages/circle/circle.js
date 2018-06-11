@@ -28,7 +28,7 @@ Page({
   onLoad: function (e) {
     var that = this;
     that.setData({
-      userInfo: AV.User.current().toJSON()
+      userInfo: app.globalData.userInfo
     });
     that.data.userStatus['state'] = e.state;
     //console.debug(e.state)
@@ -55,7 +55,6 @@ Page({
   queryMomentData: function () {
     var that = this;
     var query = new AV.Query('Moment');
-    query.limit(10);
     query.descending('createdAt');
     query.find().then(function (result) {
       that.setData({

@@ -33,7 +33,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo: AV.User.current().toJSON(),
+      userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })
 

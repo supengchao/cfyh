@@ -2,7 +2,7 @@
 const AV = require('../../../utils/av-weapp-min.js');
 const Moment = require('../../../model/moment.js');
 const util = require('../../../utils/util.js');
-
+const app = getApp()
 Page({
 
   /**
@@ -25,7 +25,7 @@ Page({
   onLoad: function (e) {
     var that = this;
     that.setData({
-      userInfo: AV.User.current().toJSON()
+      userInfo: app.globalData.userInfo
     });
 
     that.data.userStatus['name'] = e.name;
@@ -180,11 +180,11 @@ Page({
         clearInterval(timeOut);
 
 
-        var acl = new AV.ACL();
-        acl.setPublicReadAccess(false);
-        acl.setPublicWriteAccess(false);
-        acl.setReadAccess(AV.User.current(), true);
-        acl.setWriteAccess(AV.User.current(), true);
+        // var acl = new AV.ACL();
+        // acl.setPublicReadAccess(false);
+        // acl.setPublicWriteAccess(false);
+        // acl.setReadAccess(AV.User.current(), true);
+        // acl.setWriteAccess(AV.User.current(), true);
 
         new Moment({
           nickName: that.data.userInfo.nickName,
@@ -198,15 +198,15 @@ Page({
           imgLength: that.data.imgLength,
           imageList: that.data.imageList,
           user: AV.User.current()
-        }).setACL(acl).save().then((todo) => {
+        }).save().then((todo) => {
           wx.hideLoading();
           wx.showToast({
             title: '发表成功',
             icon: 'success',
             duration: 2000
           });
-          wx.navigateBack({
-            delta: 1
+          wx.switchTab({
+            url: '../../circle/circle'
           })
           that.setData({
             httpImg: [],
