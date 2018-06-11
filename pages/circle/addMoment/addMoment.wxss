@@ -17,6 +17,8 @@
   height: 150rpx;
   /*border:1px solid red;*/
   background: #fff;
+  color: #888;
+  font-size: 34rpx;
 }
 
 .address {
@@ -62,7 +64,7 @@
   position: absolute;
   width: 35rpx;
   height: 35rpx;
-  margin-top: 40rpx;
+  margin-top: 35rpx;
   margin-left: 550rpx;
 }
 

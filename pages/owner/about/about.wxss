@@ -1,1 +1,8 @@
 /* pages/owner/about/about.wxss */
+.qrcode{
+  width: 500rpx;
+  height: 700rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

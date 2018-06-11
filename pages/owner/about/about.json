@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarBackgroundColor": "#F8F8F8",
+  "navigationBarTitleText": "关于",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#F8F8F8",
+  "color": "#F8F8F8"
+}

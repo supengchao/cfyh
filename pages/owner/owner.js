@@ -15,7 +15,7 @@ Page({
       title: "我的发布",
       url: "myMoments/myMoments"
     }, {
-      title: "关于我们",
+      title: "关于",
       url: "about/about"
     }],
     headview: '/image/headview.png',

@@ -16,7 +16,7 @@
         <image bindtap='bindViewTap' class='userinfo-avatar' src='{{userInfo.avatarUrl}}' mode='cover'></image>
         <view class='userinfo-name-container'>
           <text class='userinfo-nickname'>昵  称：{{userInfo.nickName}}</text>
-          <text class='userinfo-address'>单元号：9-1-1603</text>
+          <text class='userinfo-address' hidden='true'>单元号：9-1-1603</text>
         </view>
       </view>
     </block>
