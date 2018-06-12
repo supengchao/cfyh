@@ -4,7 +4,7 @@
   <view class='house-bd'>
     <view class='page-section page-section-spacing swiper'>
       <swiper class="swiper-bd" indicator-dots='true' autoplay='true' interval='3000' duration='500' indicator-color='#FFFFFF' indicator-active-color='#80FFFFFF'>
-        <block wx:for="{{background}}">
+        <block wx:for="{{imageList}}">
           <swiper-item>
             <image class='swiper-img' src='{{item}}' mode='aspectFill'></image>
           </swiper-item>
@@ -12,12 +12,12 @@
       </swiper>
     </view>
 
-    <view class="house-desc">"遇见长风壹号"小程序是"遇见壹号"公众号的补充版，致力于为长风壹号业主提供一个分享、交流、沟通和维权的平台。</view>
+    <view class="house-desc">{{houseDesc}}</view>
     <view class='intro-list'>
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <navigator url='/pages/house/{{item.pages}}/{{item.pages}}' class='navigator'>
+      <block wx:for-items="{{tabList}}" wx:for-index="k">
+        <navigator url='/pages/house/{{pageList[k]}}/{{pageList[k]}}' class='navigator'>
           <view class="intro-list-item">
-            <view class="intro-list-item-text">{{item.name}}</view>
+            <view class="intro-list-item-text">{{tabList[k]}}</view>
             <image class="intro-list-item-img" src="resources/nav.png"></image>
           </view>
         </navigator>

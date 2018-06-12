@@ -9,7 +9,8 @@
 
 .house-bd {
   padding: 0 30rpx 40rpx;
-  background-color: #F8F8F8;
+  height: 100vh;
+  background-color: #f8f8f8;
 }
 
 .swiper-img {
@@ -28,7 +29,7 @@
   height: 32rpx;
 }
 
-.intro-list-item-text { 
+.intro-list-item-text {
   flex: 1;
 }
 
@@ -38,7 +39,6 @@
   align-items: center;
   transition: opacity 0.3s;
   margin: 20rpx 0;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-radius: 4rpx;
-
 }

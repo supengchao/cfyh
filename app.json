@@ -3,11 +3,7 @@
     "pages/index/index",
     "pages/house/house",
     "pages/owner/owner",
-    "pages/house/housedetails/baseinfo/baseinfo",
-    "pages/house/housedetails/complementinfo/complementinfo",
-    "pages/house/housedetails/planinfo/planinfo",
-    "pages/house/housedetails/projectinfo/projectinfo",
-    "pages/house/housedetails/housedetails",
+  
     "pages/house/housevideo/housevideo",
     "pages/house/housebuilding/housebuilding",
     "pages/house/housebuilding/housebuilding1/housebuilding1",

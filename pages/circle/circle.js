@@ -57,6 +57,7 @@ Page({
     var query = new AV.Query('Moment');
     query.descending('createdAt');
     query.find().then(function (result) {
+      console.log(result)
       that.setData({
         resultData: result
       });

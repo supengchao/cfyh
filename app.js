@@ -1,4 +1,10 @@
 //app.js
+//注销掉的几个页面
+// "pages/house/housedetails/baseinfo/baseinfo",
+// "pages/house/housedetails/complementinfo/complementinfo",
+// "pages/house/housedetails/planinfo/planinfo",
+// "pages/house/housedetails/projectinfo/projectinfo",
+// "pages/house/housedetails/housedetails",
 const AV = require('./utils/av-weapp-min.js');
 
 AV.init({
@@ -35,7 +41,7 @@ App({
     } catch (e) {
       console.error("getStorageSync fail")
     }
-   
+
     // 登录
     this.login();
 
