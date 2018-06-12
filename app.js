@@ -9,15 +9,38 @@ AV.init({
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
+    try {
+      //   var nickName = wx.getStorageSync('nickName')
+      // var nickName = wx.getStorageSync('nickName')
+      // var avatarUrl = wx.getStorageSync('avatarUrl')
+      // console.log("nickName=" + nickName + "avatarUrl=" + avatarUrl)
+      // console.log("========")
+      // var userInfo = wx.getStorageSync("userInfo")
+      // console.log("userinfo=" + userinfo)
+      wx.getStorage({
+        key: 'userInfo',
+        success: res => {
+          console.log(res.data)
+          var userinfo = res.data
+          if (userinfo) {
+            console.log("userinfo=" + userinfo)
+            this.globalData.userInfo = userinfo
+
+          }
+          console.log("hahahahah" + this.globalData.userInfo)
+        }
+      })
+
+    } catch (e) {
+      console.error("getStorageSync fail")
+    }
+   
     // 登录
     this.login();
 
-    const user = AV.User.current();
-    this.globalData.user = user.toJSON();
+    // const user = AV.User.current();
+    // this.globalData.user = user.toJSON();
     // 获取用户信息
     // wx.getSetting({
     //   success: res => {

@@ -67,9 +67,28 @@ Page({
     wx.switchTab({
       url: '/pages/house/house'
     })
-    wx.setStorage({
-      key: "isLogined",
-      data: true
-    })
+
+    try {
+      wx.setStorage({
+        key: "isLogined",
+        data: true
+      })
+
+      wx.setStorage({
+        key: "userInfo",
+        data: e.detail.userInfo
+      })
+
+
+      // wx.setStorageSync("isLogined", true)
+      // var info = JSON.stringify(e.detail.userInfo);
+      // wx.setStorageSync("userInfo", info)
+      // console.log(info)
+      // wx.setStorageSync("nickName", e.detail.userInfo.nickName)
+      // wx.setStorageSync("avatarUrl", e.detail.userInfo.avatarUrl)
+    } catch (e) {
+      console.error('setStoragefail')
+    }
+   
   }
 })
