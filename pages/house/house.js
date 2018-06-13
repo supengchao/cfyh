@@ -26,7 +26,7 @@ Page({
   queryHomePageData: function () {
     var that = this
     var query = new AV.Query('HomePage');
-    query.find().then(result => {
+    query.descending('createdAt').find().then(result => {
 
       that.setData({
         imageList: result[0].imageList,
