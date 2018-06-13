@@ -25,10 +25,10 @@
     
     <view class='owner-bd'>
       <view class='intro-list'>
-        <block wx:for-items="{{itemList}}" wx:key="{{item.title}}">
-          <navigator url='{{item.url}}' class='navigator'>
+        <block wx:for-items="{{tabList}}" wx:for-index='k'>
+          <navigator url='{{pageList[k]}}' class='navigator'>
             <view class="intro-list-item">
-              <view class="intro-list-item-text">{{item.title}}</view>
+              <view class="intro-list-item-text">{{tabList[k]}}</view>
               <image class="intro-list-item-img" src="../../image/nav.png"></image>
             </view>
           </navigator>

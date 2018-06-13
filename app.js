@@ -5,6 +5,7 @@
 // "pages/house/housedetails/planinfo/planinfo",
 // "pages/house/housedetails/projectinfo/projectinfo",
 // "pages/house/housedetails/housedetails",
+// "pages/circle/addMoment/addMoment",
 const AV = require('./utils/av-weapp-min.js');
 
 AV.init({

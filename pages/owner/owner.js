@@ -1,5 +1,6 @@
 // pages/owner/owner.js
 const AV = require('../../utils/av-weapp-min.js');
+const About = require('../../model/about.js');
 
 const app = getApp()
 Page({
@@ -8,16 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    itemList: [{
-      title: "发表说说",
-      url: "../circle/addMoment/addMoment"
-    }, {
-      title: "我的发布",
-      url: "myMoments/myMoments"
-    }, {
-      title: "关于",
-      url: "about/about"
-    }],
+    tabList: [],
+    pageList: [],
     headview: '/image/headview.png',
     userInfo: {},
     hasUserInfo: false,
@@ -36,8 +29,8 @@ Page({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })
-
-
+    // this.addTabInfo()
+    this.queryTabInfo()
 
     // if (app.globalData.userInfo) {
     //   this.setData({
@@ -74,6 +67,15 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  }, 
+  queryTabInfo: function () {
+    var query = new AV.Query('About');
+    query.descending('createdAt').find().then(result => {
+      this.setData({
+        tabList: result[0].tabList,
+        pageList: result[0].pageList
+      })
+    });
   },
 
   /**
