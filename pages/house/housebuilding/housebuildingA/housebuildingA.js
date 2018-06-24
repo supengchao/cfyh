@@ -1,21 +1,31 @@
 // pages/house/housebuilding/housebuildingA/housebuildingA.js
+const Building = require('../../../../model/building.js');
+const AV = require('../../../../utils/av-weapp-min.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    item: {
-      title: "暂时还有公寓A的照片更新",
-      image: ""
-    }
+    imageList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.queryBuildingData()
+  },
+  queryBuildingData: function () {
+    var that = this;
+    var query = new AV.Query('Building');
+    query.equalTo('buildingNo', 10);
+    query.first().then(function (results) {
+      that.setData({
+        imageList: results.imageList
+      });
+    }, function (error) {
+    })
   },
 
   /**

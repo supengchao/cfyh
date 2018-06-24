@@ -81,6 +81,7 @@ App({
       .then(user => user ? user : AV.User.loginWithWeapp()).catch(error =>
         console.error(error.message));
   },
+
   globalData: {
     userInfo: null
   }

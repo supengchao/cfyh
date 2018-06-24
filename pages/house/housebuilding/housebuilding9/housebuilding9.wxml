@@ -4,12 +4,10 @@
 
 
 <view class="container">
-
   <view class='content'>
     <block wx:for='{{imageList}}'>
-      <template is="buildingview" data='{{...item}}'/>
+      <template is="buildingview" data='{{...item}}' />
     </block>
     <template is="foot" />
   </view>
-
 </view>

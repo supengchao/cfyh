@@ -1,22 +1,43 @@
 // pages/house/housebuilding/housebuilding1/housebuilding1.js
+const Building = require('../../../../model/building.js');
+const AV = require('../../../../utils/av-weapp-min.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-    item: {
-      title: "2018.06.02",
-      image: "http://7xt41p.com1.z0.glb.clouddn.com/no1.jpg"
-    }
+    imageList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.addBuildingData()
+    this.queryBuildingData()
+  },
+  addBuildingData: function () {
+    var imageList = [{
+      title: "入户大厅首次曝光",
+      image: "http://7xt41p.com1.z0.glb.clouddn.com/hall1.jpg"
+    }];
+    new Building({
+      imageList: imageList,
+      buildingNo: 12
+    }).save();
+  },
+  queryBuildingData: function () {
+    var that = this;
+    var query = new AV.Query('Building');
+    query.equalTo('buildingNo', 1);
+    query.first().then(function (results) {
+      that.setData({
+        imageList: results.imageList
+      });
+    }, function (error) {
+    })
   },
 
   /**

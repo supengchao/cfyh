@@ -2,10 +2,11 @@
 <import src="../../../common/foot.wxml" />
 <import src="../template/buildingview.wxml" />
 
-
 <view class="container">
   <view class='content'>
-     <template is="buildingview" data="{{...item}}" /> 
+    <block wx:for='{{imageList}}'>
+      <template is="buildingview" data='{{...item}}' />
+    </block>
     <template is="foot" />
   </view>
 </view>

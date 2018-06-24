@@ -1,23 +1,31 @@
 // pages/house/housebuilding/housebuildinghall/housebuildinghall.js
+const Building = require('../../../../model/building.js');
+const AV = require('../../../../utils/av-weapp-min.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imageList: [
-      {
-        title: "2018.06.05 入户大堂首次曝光",
-        image: "http://7xt41p.com1.z0.glb.clouddn.com/hall1.jpg"
-      }
-    ]
+    imageList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.queryBuildingData()
+  },
+  queryBuildingData: function () {
+    var that = this;
+    var query = new AV.Query('Building');
+    query.equalTo('buildingNo', 12);
+    query.first().then(function (results) {
+      that.setData({
+        imageList: results.imageList
+      });
+    }, function (error) {
+    })
   },
 
   /**

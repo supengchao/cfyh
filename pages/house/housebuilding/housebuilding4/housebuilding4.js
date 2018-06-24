@@ -1,23 +1,32 @@
 // pages/house/housebuilding/housebuilding4/housebuilding4.js
+const Building = require('../../../../model/building.js');
+const AV = require('../../../../utils/av-weapp-min.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    item: {
-      title: "2018.06.02",
-      image: "http://7xt41p.com1.z0.glb.clouddn.com/no4.jpg"
-    }
+    imageList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.queryBuildingData()
   },
-
+  queryBuildingData: function () {
+    var that = this;
+    var query = new AV.Query('Building');
+    query.equalTo('buildingNo', 4);
+    query.first().then(function (results) {
+      that.setData({
+        imageList: results.imageList
+      });
+    }, function (error) {
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
