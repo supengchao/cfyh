@@ -13,9 +13,9 @@ Page({
     markers: [{
       latitude: 37.8253900000,
       longitude: 112.5157000000,
-      width: 50,
-      height: 50,
-      iconPath: "/image/location.png"
+      width: 40,
+      height: 40,
+      iconPath: "/image/address.png"
     }]
   },
 

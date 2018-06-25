@@ -17,6 +17,11 @@
     "pages/house/housebuilding/housebuildingA/housebuildingA",
     "pages/house/housebuilding/housebuildingB/housebuildingB",
     "pages/house/housebuilding/housebuildinghall/housebuildinghall",
+    "pages/house/housedetails/baseinfo/baseinfo",
+    "pages/house/housedetails/complementinfo/complementinfo",
+    "pages/house/housedetails/planinfo/planinfo",
+    "pages/house/housedetails/projectinfo/projectinfo",
+    "pages/house/housedetails/housedetails",
     "pages/circle/circle",
     "pages/circle/addMoment/addMoment",
     "pages/owner/myMoments/myMoments",
@@ -25,7 +30,7 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTitleText": "遇见长风壹号",
+    "navigationBarTitleText": "遇见一号",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F8F8F8"
   },
