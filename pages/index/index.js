@@ -29,6 +29,54 @@ Page({
       }
     })
 
+   
+  },
+  getUserInfo: function (e) {
+    console.log(e)
+    if (e.detail.userInfo){
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+      console.log("go to this")
+      wx.switchTab({
+        url: '/pages/house/house'
+      })
+
+      try {
+        wx.setStorage({
+          key: "isLogined",
+          data: true
+        })
+
+        wx.setStorage({
+          key: "userInfo",
+          data: e.detail.userInfo
+        })
+
+
+        // wx.setStorageSync("isLogined", true)
+        // var info = JSON.stringify(e.detail.userInfo);
+        // wx.setStorageSync("userInfo", info)
+        // console.log(info)
+        // wx.setStorageSync("nickName", e.detail.userInfo.nickName)
+        // wx.setStorageSync("avatarUrl", e.detail.userInfo.avatarUrl)
+      } catch (e) {
+        console.error('setStoragefail')
+      }
+    }else{
+      wx.showToast({
+        title: '只有允许小程序使用您的头像和昵称才能进入哦',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    
+   
+  },
+  clickImg:function(){
+    console.log()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -55,40 +103,5 @@ Page({
         }
       })
     }
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-    console.log("go to this")
-    wx.switchTab({
-      url: '/pages/house/house'
-    })
-
-    try {
-      wx.setStorage({
-        key: "isLogined",
-        data: true
-      })
-
-      wx.setStorage({
-        key: "userInfo",
-        data: e.detail.userInfo
-      })
-
-
-      // wx.setStorageSync("isLogined", true)
-      // var info = JSON.stringify(e.detail.userInfo);
-      // wx.setStorageSync("userInfo", info)
-      // console.log(info)
-      // wx.setStorageSync("nickName", e.detail.userInfo.nickName)
-      // wx.setStorageSync("avatarUrl", e.detail.userInfo.avatarUrl)
-    } catch (e) {
-      console.error('setStoragefail')
-    }
-   
   }
 })

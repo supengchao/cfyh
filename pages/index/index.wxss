@@ -30,7 +30,7 @@
 
 .btn {
   color: #aaa;
-  font-size: 30rpx;
+  font-size: 35rpx;
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 255);
